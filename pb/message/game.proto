@@ -1,0 +1,20 @@
+syntax = "proto3";
+package game;
+
+option go_package = "github.com/liangdas/joy-protobuf/golang/message";
+
+//------------------------------通用客户端游戏指令请求-----------------------------------
+// 玩家进入房间
+message C2S_EnterRoom {
+    uint32 hold = 1; //占位字段，无意义
+}
+
+//退出房间请求
+message C2S_ExitRoom {
+    uint32 hold = 1; //占位字段，无意义
+}
+
+//断线后重新申请全量数据请求
+message C2S_SyncInfo {
+    uint32 hold = 1; //占位字段，无意义
+}

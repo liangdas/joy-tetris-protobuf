@@ -1,0 +1,20 @@
+syntax = "proto3";
+package account;
+
+option go_package = "github.com/liangdas/joy-protobuf/golang/message";
+import "message/error.proto";
+
+//用于调试的登陆接口，线上会关闭
+message C2S_Login_DEBUG {
+  int64 user_id = 1; //用户id
+  string client_id = 4;  //
+}
+
+// 服务端响应收到的请求
+message S2C_Login {
+  int64 user_id = 1; //用户id
+  string nick = 2;    //用户昵称
+  string avatar = 3;  //头像URL 只在玩家设置为渠道头像来源是存在
+  error.ErrorCode Code = 4; // 后端业务员错误码
+  string  Message= 5; // 错误信息
+}

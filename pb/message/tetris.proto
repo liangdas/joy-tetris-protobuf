@@ -1,0 +1,179 @@
+syntax = "proto3";
+package tetris;
+
+option go_package = "github.com/liangdas/joy-tetris-protobuf/golang/message";
+import "message/error.proto";
+import "message/game.proto";
+
+enum TetrisGameType {
+  CLASSIC = 0;    //经典模式
+  QUICK = 1;      //快速模式
+}
+
+//创建Tetris游戏房间
+message S2S_Tetris_Create {
+  TetrisGameType game_type=1; //游戏模式
+  int64 player_num =2;         //对战人数 1/2
+  int64 gear =3;         //档位（投入金币数）0,1,2,3
+  bool use_props =4 ;    //是否使用道具
+  bool private =5 ;      //是否私有房
+  repeated int64 user_list =6; //玩家的userId
+  string version =7 ;//协议版本号
+  int64 owner =8 ;//房间拥有者
+  string room_id = 9;
+}
+
+//创建Tetris游戏房间
+message S2S_Tetris_Create_Debug {
+  TetrisGameType game_type=1; //游戏模式
+  int64 player_num =2;         //对战人数 1/2
+  int64 gear =3;         //档位（投入金币数）0,1,2,3
+  bool use_props =4 ;    //是否使用道具
+  bool private =5 ;      //是否私有房
+  repeated int64 user_list =6; //玩家的userId
+  string version =7 ;//协议版本号
+  int64 owner =8 ;//房间拥有者
+  string room_id = 9;
+}
+
+//创建Tetris游戏房间 返回结构
+message S2R_Tetris_Create {
+  TetrisGameType game_type=1; //游戏模式
+  int64 player_num =2;         //对战人数 1/2
+  int64 gear =3;         //档位（投入金币数）
+  bool use_props =4 ;    //是否使用道具
+  bool private =5 ;    //是否私有房
+  repeated int64 user_list =6; //玩家的userId
+  string version =7 ;//协议版本号
+  int64 owner =8 ;//房间拥有者
+  string room_id =9;         //房间ID  session.SetPush("ludo",room_id)
+  string short_id =10;         //房间短ID 私有房间才存在短ID，匹配房间短ID跟room_id一样
+}
+
+//客户端请求
+message C2S_Tetris {
+    //消息类型，可取字符串为下面从序号3-11，表示具体为哪一条消息；客户端每次只会发送一条请求
+    string msg_type = 1;
+    //房间id，通用字段，每条消息都会包含该参数
+    string room_id = 2;
+    game.C2S_EnterRoom enter_room_c2s = 3; //进入房间请求
+    game.C2S_ExitRoom exit_room_c2s = 4; //退出房间请求
+    game.C2S_SyncInfo sync_info_c2s = 5; //断线后重新申请全量数据请求
+    C2S_Heartbeat heartbeat_c2s = 6; //心跳消息
+    C2S_PlayerExpression player_expression_c2s = 7; //发送表情请求
+    C2S_OperationSkeleton player_operation_skeleton_c2s = 8; //操作方块
+    C2S_SelectSkeleton player_select_skeleton_c2s = 9; //更改还未开始的方块形状
+}
+
+//------------------------------客户端请求-----------------------------------
+
+//发送表情请求
+message C2S_PlayerExpression {
+    string express_index = 1; //表情序号
+    int64  to_user=2; //发送给用户ID，表情会飞到对方的头像上显示
+}
+
+//发送心跳消息
+message C2S_Heartbeat {
+    uint32 hold = 1; //占位字段，无意义
+}
+
+//操作方块
+message C2S_OperationSkeleton {
+    string  opcode =1; //操作指令 RR 顺时针旋转90度 MR 右移 ML 左移 MB 向下加速 MT 减速
+    uint32 Frame=2;  //帧数，防止因为网络延迟的误操作
+}
+
+//更改还未开始的方块形状
+message C2S_SelectSkeleton {
+    uint32 Frame=1;  //帧数，防止因为网络延迟的误操作
+    string  skeleton_type =2; // I、O、T、J、S、L、Z
+}
+
+//服务端应答
+message S2C_Tetris {
+    string room_id = 1; //房间id，通用字段，每条消息都会包含该参数
+    uint32 msg_type = 2;
+    uint32 msg_id = 3; //消息标号
+    // 玩家进入房间广播
+    S2C_PlayerEnterRoomBroadcast player_enter_room_s2c_broadcast = 4;
+    // 玩家退出游戏广播
+    S2C_PlayerExitBroadcast player_exit_s2c_broadcast = 5;
+    // 房间游戏开始广播
+    S2C_GameStartBroadcast game_start_s2c_broadcast = 6;
+    // 玩家发送表情广播
+    S2C_PlayerExpressionBroadcast player_expression_s2c_broadcast = 7;
+    // 游戏数据变更广播
+    S2C_GridBroadcast  grid_s2c_broadcast =8;
+    // 游戏结束
+    S2C_GameOverBroadcast  game_over_s2c_broadcast =9;
+}
+
+//---------------------------------------------------------------------------
+// 玩家进入房间广播
+message S2C_PlayerEnterRoomBroadcast {
+    int64 user_id = 1; //用户id
+}
+
+// 玩家退出游戏广播
+message S2C_PlayerExitBroadcast {
+    uint32 player_index = 1; //玩家序号
+    int64 user_id = 2; //玩家id
+}
+
+// 房间游戏开始广播
+message S2C_GameStartBroadcast {
+    repeated TetrisPlayerInfo player_info = 1; //用户公用信息
+    TetrisRoomInfo room_info = 3; //房间信息
+}
+
+// 玩家发送表情广播
+message S2C_PlayerExpressionBroadcast {
+    int64 user_id = 1; //玩家id
+    int64 to_user = 2; //发送给玩家ID
+    string expression_index = 3; //表情序号
+}
+
+// 游戏数据变更广播
+message S2C_GridBroadcast {
+    int64             frame =1; //同步数据当前帧数
+    repeated  Block map = 2; // 定义Map对象
+    int64             width=3;
+    int64		      height=4;
+}
+
+// 游戏结束进入结算广播
+message S2C_GameOverBroadcast {
+    int64             frame =1; //同步数据当前帧数
+}
+
+//---------------------------------------------------------------------------
+message TetrisPlayerInfo {
+    int64  user_id    = 1; //玩家id
+    string icon_url   = 2; //头像链接
+    string icon_frame = 3; //头像框序号
+    uint32 seat_index  = 4; //游戏中的玩家座位序号
+    string nick_name = 5; //玩家昵称
+    bool   in_game     = 6; //是否在游戏中尚未退出
+    bool   online       = 7; //是否在线
+    bool   auto         = 8; //是否托管
+}
+
+
+message TetrisRoomInfo {
+    TetrisGameType room_type = 1; //房间类型
+    int64 player_num =2;         //对战人数 1/2
+    int64 gear =3;         //档位（投入金币数）
+    bool use_props =4;    //是否使用道具
+    bool private =5;    //是否私有房
+    string version =6;//协议版本号
+    int64 owner = 7; //房间拥有者
+}
+
+
+message Block {
+    uint32      value = 1;
+    uint32      opacity = 2;
+    uint32      operating = 3;
+    uint32      index=4;
+}
