@@ -1,7 +1,7 @@
 syntax = "proto3";
 package game;
 
-option go_package = "github.com/liangdas/joy-protobuf/golang/message";
+option go_package = "github.com/liangdas/joy-tetris-protobuf/golang/message";
 
 //------------------------------通用客户端游戏指令请求-----------------------------------
 // 玩家进入房间

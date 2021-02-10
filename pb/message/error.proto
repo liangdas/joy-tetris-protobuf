@@ -1,7 +1,7 @@
 syntax = "proto3";
 package error;
 
-option go_package = "github.com/liangdas/joy-protobuf/golang/message";
+option go_package = "github.com/liangdas/joy-tetris-protobuf/golang/message";
 
 
 enum ErrorCode{

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package account;
 
-option go_package = "github.com/liangdas/joy-protobuf/golang/message";
+option go_package = "github.com/liangdas/joy-tetris-protobuf/golang/message";
 import "message/error.proto";
 
 //用于调试的登陆接口，线上会关闭

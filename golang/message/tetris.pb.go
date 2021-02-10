@@ -8,7 +8,6 @@ package message
 
 import (
 	proto "github.com/golang/protobuf/proto"
-	message "github.com/liangdas/joy-protobuf/golang/message"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -426,9 +425,9 @@ type C2S_Tetris struct {
 	MsgType string `protobuf:"bytes,1,opt,name=msg_type,json=msgType,proto3" json:"msg_type,omitempty"`
 	//房间id，通用字段，每条消息都会包含该参数
 	RoomId                     string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
-	EnterRoomC2S               *message.C2S_EnterRoom `protobuf:"bytes,3,opt,name=enter_room_c2s,json=enterRoomC2s,proto3" json:"enter_room_c2s,omitempty"`                                             //进入房间请求
-	ExitRoomC2S                *message.C2S_ExitRoom  `protobuf:"bytes,4,opt,name=exit_room_c2s,json=exitRoomC2s,proto3" json:"exit_room_c2s,omitempty"`                                                //退出房间请求
-	SyncInfoC2S                *message.C2S_SyncInfo  `protobuf:"bytes,5,opt,name=sync_info_c2s,json=syncInfoC2s,proto3" json:"sync_info_c2s,omitempty"`                                                //断线后重新申请全量数据请求
+	EnterRoomC2S               *C2S_EnterRoom         `protobuf:"bytes,3,opt,name=enter_room_c2s,json=enterRoomC2s,proto3" json:"enter_room_c2s,omitempty"`                                             //进入房间请求
+	ExitRoomC2S                *C2S_ExitRoom          `protobuf:"bytes,4,opt,name=exit_room_c2s,json=exitRoomC2s,proto3" json:"exit_room_c2s,omitempty"`                                                //退出房间请求
+	SyncInfoC2S                *C2S_SyncInfo          `protobuf:"bytes,5,opt,name=sync_info_c2s,json=syncInfoC2s,proto3" json:"sync_info_c2s,omitempty"`                                                //断线后重新申请全量数据请求
 	HeartbeatC2S               *C2S_Heartbeat         `protobuf:"bytes,6,opt,name=heartbeat_c2s,json=heartbeatC2s,proto3" json:"heartbeat_c2s,omitempty"`                                               //心跳消息
 	PlayerExpressionC2S        *C2S_PlayerExpression  `protobuf:"bytes,7,opt,name=player_expression_c2s,json=playerExpressionC2s,proto3" json:"player_expression_c2s,omitempty"`                        //发送表情请求
 	PlayerOperationSkeletonC2S *C2S_OperationSkeleton `protobuf:"bytes,8,opt,name=player_operation_skeleton_c2s,json=playerOperationSkeletonC2s,proto3" json:"player_operation_skeleton_c2s,omitempty"` //操作方块
@@ -481,21 +480,21 @@ func (x *C2S_Tetris) GetRoomId() string {
 	return ""
 }
 
-func (x *C2S_Tetris) GetEnterRoomC2S() *message.C2S_EnterRoom {
+func (x *C2S_Tetris) GetEnterRoomC2S() *C2S_EnterRoom {
 	if x != nil {
 		return x.EnterRoomC2S
 	}
 	return nil
 }
 
-func (x *C2S_Tetris) GetExitRoomC2S() *message.C2S_ExitRoom {
+func (x *C2S_Tetris) GetExitRoomC2S() *C2S_ExitRoom {
 	if x != nil {
 		return x.ExitRoomC2S
 	}
 	return nil
 }
 
-func (x *C2S_Tetris) GetSyncInfoC2S() *message.C2S_SyncInfo {
+func (x *C2S_Tetris) GetSyncInfoC2S() *C2S_SyncInfo {
 	if x != nil {
 		return x.SyncInfoC2S
 	}
@@ -1750,9 +1749,9 @@ var file_message_tetris_proto_goTypes = []interface{}{
 	(*TetrisPlayerInfo)(nil),              // 16: tetris.TetrisPlayerInfo
 	(*TetrisRoomInfo)(nil),                // 17: tetris.TetrisRoomInfo
 	(*Block)(nil),                         // 18: tetris.Block
-	(*message.C2S_EnterRoom)(nil),         // 19: game.C2S_EnterRoom
-	(*message.C2S_ExitRoom)(nil),          // 20: game.C2S_ExitRoom
-	(*message.C2S_SyncInfo)(nil),          // 21: game.C2S_SyncInfo
+	(*C2S_EnterRoom)(nil),                 // 19: game.C2S_EnterRoom
+	(*C2S_ExitRoom)(nil),                  // 20: game.C2S_ExitRoom
+	(*C2S_SyncInfo)(nil),                  // 21: game.C2S_SyncInfo
 }
 var file_message_tetris_proto_depIdxs = []int32{
 	0,  // 0: tetris.S2S_Tetris_Create.game_type:type_name -> tetris.TetrisGameType
@@ -1787,6 +1786,8 @@ func file_message_tetris_proto_init() {
 	if File_message_tetris_proto != nil {
 		return
 	}
+	file_message_error_proto_init()
+	file_message_game_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_message_tetris_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*S2S_Tetris_Create); i {

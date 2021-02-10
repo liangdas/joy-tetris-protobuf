@@ -1,6 +1,6 @@
 syntax = "proto3";
 package response;
-option go_package = "github.com/liangdas/joy-protobuf/golang/message";
+option go_package = "github.com/liangdas/joy-tetris-protobuf/golang/message";
 
 // 服务端响应收到的请求
 message S2C_Response {
