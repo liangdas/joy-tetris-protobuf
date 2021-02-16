@@ -16,8 +16,8 @@ import 'tetris.pbenum.dart';
 
 export 'tetris.pbenum.dart';
 
-class S2S_Tetris_Create_Debug extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2S_Tetris_Create_Debug', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
+class S2S_Tetris_Create extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2S_Tetris_Create', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
     ..e<TetrisGameType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gameType', $pb.PbFieldType.OE, defaultOrMaker: TetrisGameType.CLASSIC, valueOf: TetrisGameType.valueOf, enumValues: TetrisGameType.values)
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerNum')
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gear')
@@ -30,28 +30,28 @@ class S2S_Tetris_Create_Debug extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  S2S_Tetris_Create_Debug._() : super();
-  factory S2S_Tetris_Create_Debug() => create();
-  factory S2S_Tetris_Create_Debug.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory S2S_Tetris_Create_Debug.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  S2S_Tetris_Create._() : super();
+  factory S2S_Tetris_Create() => create();
+  factory S2S_Tetris_Create.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory S2S_Tetris_Create.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  S2S_Tetris_Create_Debug clone() => S2S_Tetris_Create_Debug()..mergeFromMessage(this);
+  S2S_Tetris_Create clone() => S2S_Tetris_Create()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  S2S_Tetris_Create_Debug copyWith(void Function(S2S_Tetris_Create_Debug) updates) => super.copyWith((message) => updates(message as S2S_Tetris_Create_Debug)); // ignore: deprecated_member_use
+  S2S_Tetris_Create copyWith(void Function(S2S_Tetris_Create) updates) => super.copyWith((message) => updates(message as S2S_Tetris_Create)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static S2S_Tetris_Create_Debug create() => S2S_Tetris_Create_Debug._();
-  S2S_Tetris_Create_Debug createEmptyInstance() => create();
-  static $pb.PbList<S2S_Tetris_Create_Debug> createRepeated() => $pb.PbList<S2S_Tetris_Create_Debug>();
+  static S2S_Tetris_Create create() => S2S_Tetris_Create._();
+  S2S_Tetris_Create createEmptyInstance() => create();
+  static $pb.PbList<S2S_Tetris_Create> createRepeated() => $pb.PbList<S2S_Tetris_Create>();
   @$core.pragma('dart2js:noInline')
-  static S2S_Tetris_Create_Debug getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2S_Tetris_Create_Debug>(create);
-  static S2S_Tetris_Create_Debug _defaultInstance;
+  static S2S_Tetris_Create getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2S_Tetris_Create>(create);
+  static S2S_Tetris_Create _defaultInstance;
 
   @$pb.TagNumber(1)
   TetrisGameType get gameType => $_getN(0);

@@ -23,8 +23,8 @@ const TetrisGameType$json = const {
   ],
 };
 
-const S2S_Tetris_Create_Debug$json = const {
-  '1': 'S2S_Tetris_Create_Debug',
+const S2S_Tetris_Create$json = const {
+  '1': 'S2S_Tetris_Create',
   '2': const [
     const {'1': 'game_type', '3': 1, '4': 1, '5': 14, '6': '.tetris.TetrisGameType', '10': 'gameType'},
     const {'1': 'player_num', '3': 2, '4': 1, '5': 3, '10': 'playerNum'},

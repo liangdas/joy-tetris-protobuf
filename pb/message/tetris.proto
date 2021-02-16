@@ -18,7 +18,7 @@ enum TetrisGameType {
 }
 
 //创建Tetris游戏房间
-message S2S_Tetris_Create_Debug {
+message S2S_Tetris_Create {
   TetrisGameType game_type=1; //游戏模式
   int64 player_num =2;         //对战人数 1/2
   int64 gear =3;         //档位（投入金币数）0,1,2,3
