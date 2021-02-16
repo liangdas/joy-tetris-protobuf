@@ -1,4 +1,4 @@
-module github.com/liangdas/joy-protobuf
+module github.com/liangdas/joy-tetris-protobuf
 
 go 1.13
 
