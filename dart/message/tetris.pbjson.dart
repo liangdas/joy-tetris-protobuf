@@ -5,26 +5,21 @@
 // @dart = 2.3
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
+const TetrisGameStatus$json = const {
+  '1': 'TetrisGameStatus',
+  '2': const [
+    const {'1': 'AWAIT', '2': 0},
+    const {'1': 'BEGIN', '2': 1},
+    const {'1': 'SUSPEND', '2': 3},
+    const {'1': 'GAMEOVER', '2': 4},
+  ],
+};
+
 const TetrisGameType$json = const {
   '1': 'TetrisGameType',
   '2': const [
     const {'1': 'CLASSIC', '2': 0},
     const {'1': 'QUICK', '2': 1},
-  ],
-};
-
-const S2S_Tetris_Create$json = const {
-  '1': 'S2S_Tetris_Create',
-  '2': const [
-    const {'1': 'game_type', '3': 1, '4': 1, '5': 14, '6': '.tetris.TetrisGameType', '10': 'gameType'},
-    const {'1': 'player_num', '3': 2, '4': 1, '5': 3, '10': 'playerNum'},
-    const {'1': 'gear', '3': 3, '4': 1, '5': 3, '10': 'gear'},
-    const {'1': 'use_props', '3': 4, '4': 1, '5': 8, '10': 'useProps'},
-    const {'1': 'private', '3': 5, '4': 1, '5': 8, '10': 'private'},
-    const {'1': 'user_list', '3': 6, '4': 3, '5': 3, '10': 'userList'},
-    const {'1': 'version', '3': 7, '4': 1, '5': 9, '10': 'version'},
-    const {'1': 'owner', '3': 8, '4': 1, '5': 3, '10': 'owner'},
-    const {'1': 'room_id', '3': 9, '4': 1, '5': 9, '10': 'roomId'},
   ],
 };
 
@@ -111,35 +106,39 @@ const S2C_Tetris$json = const {
     const {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
     const {'1': 'msg_type', '3': 2, '4': 1, '5': 13, '10': 'msgType'},
     const {'1': 'msg_id', '3': 3, '4': 1, '5': 13, '10': 'msgId'},
-    const {'1': 'player_enter_room_s2c_broadcast', '3': 4, '4': 1, '5': 11, '6': '.tetris.S2C_PlayerEnterRoomBroadcast', '10': 'playerEnterRoomS2cBroadcast'},
-    const {'1': 'player_exit_s2c_broadcast', '3': 5, '4': 1, '5': 11, '6': '.tetris.S2C_PlayerExitBroadcast', '10': 'playerExitS2cBroadcast'},
-    const {'1': 'game_start_s2c_broadcast', '3': 6, '4': 1, '5': 11, '6': '.tetris.S2C_GameStartBroadcast', '10': 'gameStartS2cBroadcast'},
-    const {'1': 'player_expression_s2c_broadcast', '3': 7, '4': 1, '5': 11, '6': '.tetris.S2C_PlayerExpressionBroadcast', '10': 'playerExpressionS2cBroadcast'},
-    const {'1': 'grid_s2c_broadcast', '3': 8, '4': 1, '5': 11, '6': '.tetris.S2C_GridBroadcast', '10': 'gridS2cBroadcast'},
-    const {'1': 'game_over_s2c_broadcast', '3': 9, '4': 1, '5': 11, '6': '.tetris.S2C_GameOverBroadcast', '10': 'gameOverS2cBroadcast'},
+    const {'1': 'player_status_change_s2c_broadcast', '3': 4, '4': 1, '5': 11, '6': '.tetris.S2C_PlayerStatusChangeBroadcast', '10': 'playerStatusChangeS2cBroadcast'},
+    const {'1': 'game_status_change_s2c_broadcast', '3': 5, '4': 1, '5': 11, '6': '.tetris.S2C_GameStatusChangeBroadcast', '10': 'gameStatusChangeS2cBroadcast'},
+    const {'1': 'player_expression_s2c_broadcast', '3': 6, '4': 1, '5': 11, '6': '.tetris.S2C_PlayerExpressionBroadcast', '10': 'playerExpressionS2cBroadcast'},
+    const {'1': 'grid_s2c_broadcast', '3': 7, '4': 1, '5': 11, '6': '.tetris.S2C_GridBroadcast', '10': 'gridS2cBroadcast'},
   ],
 };
 
-const S2C_PlayerEnterRoomBroadcast$json = const {
-  '1': 'S2C_PlayerEnterRoomBroadcast',
+const S2C_PlayerStatusChangeBroadcast$json = const {
+  '1': 'S2C_PlayerStatusChangeBroadcast',
   '2': const [
-    const {'1': 'user_id', '3': 1, '4': 1, '5': 3, '10': 'userId'},
-  ],
-};
-
-const S2C_PlayerExitBroadcast$json = const {
-  '1': 'S2C_PlayerExitBroadcast',
-  '2': const [
-    const {'1': 'player_index', '3': 1, '4': 1, '5': 13, '10': 'playerIndex'},
+    const {'1': 'seat_index', '3': 1, '4': 1, '5': 13, '10': 'seatIndex'},
     const {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    const {'1': 'status', '3': 3, '4': 1, '5': 14, '6': '.tetris.S2C_PlayerStatusChangeBroadcast.PlayerStatusType', '10': 'status'},
+    const {'1': 'player_info', '3': 4, '4': 3, '5': 11, '6': '.tetris.TetrisPlayerInfo', '10': 'playerInfo'},
+  ],
+  '4': const [S2C_PlayerStatusChangeBroadcast_PlayerStatusType$json],
+};
+
+const S2C_PlayerStatusChangeBroadcast_PlayerStatusType$json = const {
+  '1': 'PlayerStatusType',
+  '2': const [
+    const {'1': 'ENTER', '2': 0},
+    const {'1': 'EXIT', '2': 1},
+    const {'1': 'ONLINE', '2': 2},
+    const {'1': 'OFFLINE', '2': 3},
   ],
 };
 
-const S2C_GameStartBroadcast$json = const {
-  '1': 'S2C_GameStartBroadcast',
+const S2C_GameStatusChangeBroadcast$json = const {
+  '1': 'S2C_GameStatusChangeBroadcast',
   '2': const [
     const {'1': 'player_info', '3': 1, '4': 3, '5': 11, '6': '.tetris.TetrisPlayerInfo', '10': 'playerInfo'},
-    const {'1': 'room_info', '3': 3, '4': 1, '5': 11, '6': '.tetris.TetrisRoomInfo', '10': 'roomInfo'},
+    const {'1': 'room_info', '3': 2, '4': 1, '5': 11, '6': '.tetris.TetrisRoomInfo', '10': 'roomInfo'},
   ],
 };
 
@@ -162,13 +161,6 @@ const S2C_GridBroadcast$json = const {
   ],
 };
 
-const S2C_GameOverBroadcast$json = const {
-  '1': 'S2C_GameOverBroadcast',
-  '2': const [
-    const {'1': 'frame', '3': 1, '4': 1, '5': 3, '10': 'frame'},
-  ],
-};
-
 const TetrisPlayerInfo$json = const {
   '1': 'TetrisPlayerInfo',
   '2': const [
@@ -180,6 +172,7 @@ const TetrisPlayerInfo$json = const {
     const {'1': 'in_game', '3': 6, '4': 1, '5': 8, '10': 'inGame'},
     const {'1': 'online', '3': 7, '4': 1, '5': 8, '10': 'online'},
     const {'1': 'auto', '3': 8, '4': 1, '5': 8, '10': 'auto'},
+    const {'1': 'score', '3': 9, '4': 1, '5': 13, '10': 'score'},
   ],
 };
 
@@ -188,11 +181,7 @@ const TetrisRoomInfo$json = const {
   '2': const [
     const {'1': 'room_type', '3': 1, '4': 1, '5': 14, '6': '.tetris.TetrisGameType', '10': 'roomType'},
     const {'1': 'player_num', '3': 2, '4': 1, '5': 3, '10': 'playerNum'},
-    const {'1': 'gear', '3': 3, '4': 1, '5': 3, '10': 'gear'},
-    const {'1': 'use_props', '3': 4, '4': 1, '5': 8, '10': 'useProps'},
-    const {'1': 'private', '3': 5, '4': 1, '5': 8, '10': 'private'},
-    const {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
-    const {'1': 'owner', '3': 7, '4': 1, '5': 3, '10': 'owner'},
+    const {'1': 'status', '3': 3, '4': 1, '5': 14, '6': '.tetris.TetrisGameStatus', '10': 'status'},
   ],
 };
 

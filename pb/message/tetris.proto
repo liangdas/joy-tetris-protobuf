@@ -5,22 +5,16 @@ option go_package = "github.com/liangdas/joy-tetris-protobuf/golang/message";
 import "message/error.proto";
 import "message/game.proto";
 
+enum TetrisGameStatus {
+  AWAIT = 0;      //等待加入
+  BEGIN = 1;      //已开始
+  SUSPEND = 3;      //已暂停
+  GAMEOVER = 4;   //游戏已结束
+}
+
 enum TetrisGameType {
   CLASSIC = 0;    //经典模式
   QUICK = 1;      //快速模式
-}
-
-//创建Tetris游戏房间
-message S2S_Tetris_Create {
-  TetrisGameType game_type=1; //游戏模式
-  int64 player_num =2;         //对战人数 1/2
-  int64 gear =3;         //档位（投入金币数）0,1,2,3
-  bool use_props =4 ;    //是否使用道具
-  bool private =5 ;      //是否私有房
-  repeated int64 user_list =6; //玩家的userId
-  string version =7 ;//协议版本号
-  int64 owner =8 ;//房间拥有者
-  string room_id = 9;
 }
 
 //创建Tetris游戏房间
@@ -95,36 +89,35 @@ message S2C_Tetris {
     string room_id = 1; //房间id，通用字段，每条消息都会包含该参数
     uint32 msg_type = 2;
     uint32 msg_id = 3; //消息标号
-    // 玩家进入房间广播
-    S2C_PlayerEnterRoomBroadcast player_enter_room_s2c_broadcast = 4;
-    // 玩家退出游戏广播
-    S2C_PlayerExitBroadcast player_exit_s2c_broadcast = 5;
+    // 玩家状态变更广播
+    S2C_PlayerStatusChangeBroadcast player_status_change_s2c_broadcast = 4;
     // 房间游戏开始广播
-    S2C_GameStartBroadcast game_start_s2c_broadcast = 6;
+    S2C_GameStatusChangeBroadcast game_status_change_s2c_broadcast = 5;
     // 玩家发送表情广播
-    S2C_PlayerExpressionBroadcast player_expression_s2c_broadcast = 7;
+    S2C_PlayerExpressionBroadcast player_expression_s2c_broadcast = 6;
     // 游戏数据变更广播
-    S2C_GridBroadcast  grid_s2c_broadcast =8;
-    // 游戏结束
-    S2C_GameOverBroadcast  game_over_s2c_broadcast =9;
+    S2C_GridBroadcast  grid_s2c_broadcast =7;
 }
 
 //---------------------------------------------------------------------------
-// 玩家进入房间广播
-message S2C_PlayerEnterRoomBroadcast {
-    int64 user_id = 1; //用户id
+// 玩家状态变更广播
+message S2C_PlayerStatusChangeBroadcast {
+    enum PlayerStatusType {
+      ENTER = 0;    //进入游戏
+      EXIT = 1;      //退出游戏
+      ONLINE = 2;      //在线
+      OFFLINE = 3;      //离线
+    }
+    uint32 seat_index = 1; //玩家序号
+    int64 user_id = 2; //用户id
+    PlayerStatusType status =3 ;//用户状态
+    repeated TetrisPlayerInfo player_info = 4; //用户公用信息
 }
 
-// 玩家退出游戏广播
-message S2C_PlayerExitBroadcast {
-    uint32 player_index = 1; //玩家序号
-    int64 user_id = 2; //玩家id
-}
-
-// 房间游戏开始广播
-message S2C_GameStartBroadcast {
+// 房间状态变更广播
+message S2C_GameStatusChangeBroadcast {
     repeated TetrisPlayerInfo player_info = 1; //用户公用信息
-    TetrisRoomInfo room_info = 3; //房间信息
+    TetrisRoomInfo room_info = 2; //房间信息
 }
 
 // 玩家发送表情广播
@@ -137,14 +130,9 @@ message S2C_PlayerExpressionBroadcast {
 // 游戏数据变更广播
 message S2C_GridBroadcast {
     int64             frame =1; //同步数据当前帧数
-    repeated  Block map = 2; // 定义Map对象
+    repeated          Block map = 2; // 定义Map对象
     int64             width=3;
     int64		      height=4;
-}
-
-// 游戏结束进入结算广播
-message S2C_GameOverBroadcast {
-    int64             frame =1; //同步数据当前帧数
 }
 
 //---------------------------------------------------------------------------
@@ -157,17 +145,14 @@ message TetrisPlayerInfo {
     bool   in_game     = 6; //是否在游戏中尚未退出
     bool   online       = 7; //是否在线
     bool   auto         = 8; //是否托管
+    uint32  score       = 9; //获得分数
 }
 
 
 message TetrisRoomInfo {
     TetrisGameType room_type = 1; //房间类型
     int64 player_num =2;         //对战人数 1/2
-    int64 gear =3;         //档位（投入金币数）
-    bool use_props =4;    //是否使用道具
-    bool private =5;    //是否私有房
-    string version =6;//协议版本号
-    int64 owner = 7; //房间拥有者
+    TetrisGameStatus status =3;    //游戏状态
 }
 
 

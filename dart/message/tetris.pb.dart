@@ -16,119 +16,6 @@ import 'tetris.pbenum.dart';
 
 export 'tetris.pbenum.dart';
 
-class S2S_Tetris_Create extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2S_Tetris_Create', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
-    ..e<TetrisGameType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gameType', $pb.PbFieldType.OE, defaultOrMaker: TetrisGameType.CLASSIC, valueOf: TetrisGameType.valueOf, enumValues: TetrisGameType.values)
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerNum')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gear')
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'useProps')
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'private')
-    ..p<$fixnum.Int64>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userList', $pb.PbFieldType.P6)
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
-    ..aInt64(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roomId')
-    ..hasRequiredFields = false
-  ;
-
-  S2S_Tetris_Create._() : super();
-  factory S2S_Tetris_Create() => create();
-  factory S2S_Tetris_Create.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory S2S_Tetris_Create.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  S2S_Tetris_Create clone() => S2S_Tetris_Create()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  S2S_Tetris_Create copyWith(void Function(S2S_Tetris_Create) updates) => super.copyWith((message) => updates(message as S2S_Tetris_Create)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static S2S_Tetris_Create create() => S2S_Tetris_Create._();
-  S2S_Tetris_Create createEmptyInstance() => create();
-  static $pb.PbList<S2S_Tetris_Create> createRepeated() => $pb.PbList<S2S_Tetris_Create>();
-  @$core.pragma('dart2js:noInline')
-  static S2S_Tetris_Create getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2S_Tetris_Create>(create);
-  static S2S_Tetris_Create _defaultInstance;
-
-  @$pb.TagNumber(1)
-  TetrisGameType get gameType => $_getN(0);
-  @$pb.TagNumber(1)
-  set gameType(TetrisGameType v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGameType() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGameType() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get playerNum => $_getI64(1);
-  @$pb.TagNumber(2)
-  set playerNum($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasPlayerNum() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPlayerNum() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $fixnum.Int64 get gear => $_getI64(2);
-  @$pb.TagNumber(3)
-  set gear($fixnum.Int64 v) { $_setInt64(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasGear() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearGear() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.bool get useProps => $_getBF(3);
-  @$pb.TagNumber(4)
-  set useProps($core.bool v) { $_setBool(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasUseProps() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearUseProps() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.bool get private => $_getBF(4);
-  @$pb.TagNumber(5)
-  set private($core.bool v) { $_setBool(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPrivate() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPrivate() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.List<$fixnum.Int64> get userList => $_getList(5);
-
-  @$pb.TagNumber(7)
-  $core.String get version => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set version($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasVersion() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearVersion() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $fixnum.Int64 get owner => $_getI64(7);
-  @$pb.TagNumber(8)
-  set owner($fixnum.Int64 v) { $_setInt64(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasOwner() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearOwner() => clearField(8);
-
-  @$pb.TagNumber(9)
-  $core.String get roomId => $_getSZ(8);
-  @$pb.TagNumber(9)
-  set roomId($core.String v) { $_setString(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasRoomId() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearRoomId() => clearField(9);
-}
-
 class S2S_Tetris_Create_Debug extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2S_Tetris_Create_Debug', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
     ..e<TetrisGameType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gameType', $pb.PbFieldType.OE, defaultOrMaker: TetrisGameType.CLASSIC, valueOf: TetrisGameType.valueOf, enumValues: TetrisGameType.values)
@@ -689,12 +576,10 @@ class S2C_Tetris extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roomId')
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msgType', $pb.PbFieldType.OU3)
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msgId', $pb.PbFieldType.OU3)
-    ..aOM<S2C_PlayerEnterRoomBroadcast>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerEnterRoomS2cBroadcast', subBuilder: S2C_PlayerEnterRoomBroadcast.create)
-    ..aOM<S2C_PlayerExitBroadcast>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerExitS2cBroadcast', subBuilder: S2C_PlayerExitBroadcast.create)
-    ..aOM<S2C_GameStartBroadcast>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gameStartS2cBroadcast', subBuilder: S2C_GameStartBroadcast.create)
-    ..aOM<S2C_PlayerExpressionBroadcast>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerExpressionS2cBroadcast', subBuilder: S2C_PlayerExpressionBroadcast.create)
-    ..aOM<S2C_GridBroadcast>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gridS2cBroadcast', subBuilder: S2C_GridBroadcast.create)
-    ..aOM<S2C_GameOverBroadcast>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gameOverS2cBroadcast', subBuilder: S2C_GameOverBroadcast.create)
+    ..aOM<S2C_PlayerStatusChangeBroadcast>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerStatusChangeS2cBroadcast', subBuilder: S2C_PlayerStatusChangeBroadcast.create)
+    ..aOM<S2C_GameStatusChangeBroadcast>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gameStatusChangeS2cBroadcast', subBuilder: S2C_GameStatusChangeBroadcast.create)
+    ..aOM<S2C_PlayerExpressionBroadcast>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerExpressionS2cBroadcast', subBuilder: S2C_PlayerExpressionBroadcast.create)
+    ..aOM<S2C_GridBroadcast>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gridS2cBroadcast', subBuilder: S2C_GridBroadcast.create)
     ..hasRequiredFields = false
   ;
 
@@ -749,149 +634,90 @@ class S2C_Tetris extends $pb.GeneratedMessage {
   void clearMsgId() => clearField(3);
 
   @$pb.TagNumber(4)
-  S2C_PlayerEnterRoomBroadcast get playerEnterRoomS2cBroadcast => $_getN(3);
+  S2C_PlayerStatusChangeBroadcast get playerStatusChangeS2cBroadcast => $_getN(3);
   @$pb.TagNumber(4)
-  set playerEnterRoomS2cBroadcast(S2C_PlayerEnterRoomBroadcast v) { setField(4, v); }
+  set playerStatusChangeS2cBroadcast(S2C_PlayerStatusChangeBroadcast v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPlayerEnterRoomS2cBroadcast() => $_has(3);
+  $core.bool hasPlayerStatusChangeS2cBroadcast() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPlayerEnterRoomS2cBroadcast() => clearField(4);
+  void clearPlayerStatusChangeS2cBroadcast() => clearField(4);
   @$pb.TagNumber(4)
-  S2C_PlayerEnterRoomBroadcast ensurePlayerEnterRoomS2cBroadcast() => $_ensure(3);
+  S2C_PlayerStatusChangeBroadcast ensurePlayerStatusChangeS2cBroadcast() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  S2C_PlayerExitBroadcast get playerExitS2cBroadcast => $_getN(4);
+  S2C_GameStatusChangeBroadcast get gameStatusChangeS2cBroadcast => $_getN(4);
   @$pb.TagNumber(5)
-  set playerExitS2cBroadcast(S2C_PlayerExitBroadcast v) { setField(5, v); }
+  set gameStatusChangeS2cBroadcast(S2C_GameStatusChangeBroadcast v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPlayerExitS2cBroadcast() => $_has(4);
+  $core.bool hasGameStatusChangeS2cBroadcast() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPlayerExitS2cBroadcast() => clearField(5);
+  void clearGameStatusChangeS2cBroadcast() => clearField(5);
   @$pb.TagNumber(5)
-  S2C_PlayerExitBroadcast ensurePlayerExitS2cBroadcast() => $_ensure(4);
+  S2C_GameStatusChangeBroadcast ensureGameStatusChangeS2cBroadcast() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  S2C_GameStartBroadcast get gameStartS2cBroadcast => $_getN(5);
+  S2C_PlayerExpressionBroadcast get playerExpressionS2cBroadcast => $_getN(5);
   @$pb.TagNumber(6)
-  set gameStartS2cBroadcast(S2C_GameStartBroadcast v) { setField(6, v); }
+  set playerExpressionS2cBroadcast(S2C_PlayerExpressionBroadcast v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasGameStartS2cBroadcast() => $_has(5);
+  $core.bool hasPlayerExpressionS2cBroadcast() => $_has(5);
   @$pb.TagNumber(6)
-  void clearGameStartS2cBroadcast() => clearField(6);
+  void clearPlayerExpressionS2cBroadcast() => clearField(6);
   @$pb.TagNumber(6)
-  S2C_GameStartBroadcast ensureGameStartS2cBroadcast() => $_ensure(5);
+  S2C_PlayerExpressionBroadcast ensurePlayerExpressionS2cBroadcast() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  S2C_PlayerExpressionBroadcast get playerExpressionS2cBroadcast => $_getN(6);
+  S2C_GridBroadcast get gridS2cBroadcast => $_getN(6);
   @$pb.TagNumber(7)
-  set playerExpressionS2cBroadcast(S2C_PlayerExpressionBroadcast v) { setField(7, v); }
+  set gridS2cBroadcast(S2C_GridBroadcast v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasPlayerExpressionS2cBroadcast() => $_has(6);
+  $core.bool hasGridS2cBroadcast() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPlayerExpressionS2cBroadcast() => clearField(7);
+  void clearGridS2cBroadcast() => clearField(7);
   @$pb.TagNumber(7)
-  S2C_PlayerExpressionBroadcast ensurePlayerExpressionS2cBroadcast() => $_ensure(6);
-
-  @$pb.TagNumber(8)
-  S2C_GridBroadcast get gridS2cBroadcast => $_getN(7);
-  @$pb.TagNumber(8)
-  set gridS2cBroadcast(S2C_GridBroadcast v) { setField(8, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasGridS2cBroadcast() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearGridS2cBroadcast() => clearField(8);
-  @$pb.TagNumber(8)
-  S2C_GridBroadcast ensureGridS2cBroadcast() => $_ensure(7);
-
-  @$pb.TagNumber(9)
-  S2C_GameOverBroadcast get gameOverS2cBroadcast => $_getN(8);
-  @$pb.TagNumber(9)
-  set gameOverS2cBroadcast(S2C_GameOverBroadcast v) { setField(9, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasGameOverS2cBroadcast() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearGameOverS2cBroadcast() => clearField(9);
-  @$pb.TagNumber(9)
-  S2C_GameOverBroadcast ensureGameOverS2cBroadcast() => $_ensure(8);
+  S2C_GridBroadcast ensureGridS2cBroadcast() => $_ensure(6);
 }
 
-class S2C_PlayerEnterRoomBroadcast extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2C_PlayerEnterRoomBroadcast', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
-    ..hasRequiredFields = false
-  ;
-
-  S2C_PlayerEnterRoomBroadcast._() : super();
-  factory S2C_PlayerEnterRoomBroadcast() => create();
-  factory S2C_PlayerEnterRoomBroadcast.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory S2C_PlayerEnterRoomBroadcast.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  S2C_PlayerEnterRoomBroadcast clone() => S2C_PlayerEnterRoomBroadcast()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  S2C_PlayerEnterRoomBroadcast copyWith(void Function(S2C_PlayerEnterRoomBroadcast) updates) => super.copyWith((message) => updates(message as S2C_PlayerEnterRoomBroadcast)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static S2C_PlayerEnterRoomBroadcast create() => S2C_PlayerEnterRoomBroadcast._();
-  S2C_PlayerEnterRoomBroadcast createEmptyInstance() => create();
-  static $pb.PbList<S2C_PlayerEnterRoomBroadcast> createRepeated() => $pb.PbList<S2C_PlayerEnterRoomBroadcast>();
-  @$core.pragma('dart2js:noInline')
-  static S2C_PlayerEnterRoomBroadcast getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2C_PlayerEnterRoomBroadcast>(create);
-  static S2C_PlayerEnterRoomBroadcast _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get userId => $_getI64(0);
-  @$pb.TagNumber(1)
-  set userId($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasUserId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
-}
-
-class S2C_PlayerExitBroadcast extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2C_PlayerExitBroadcast', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerIndex', $pb.PbFieldType.OU3)
+class S2C_PlayerStatusChangeBroadcast extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2C_PlayerStatusChangeBroadcast', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seatIndex', $pb.PbFieldType.OU3)
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..e<S2C_PlayerStatusChangeBroadcast_PlayerStatusType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: S2C_PlayerStatusChangeBroadcast_PlayerStatusType.ENTER, valueOf: S2C_PlayerStatusChangeBroadcast_PlayerStatusType.valueOf, enumValues: S2C_PlayerStatusChangeBroadcast_PlayerStatusType.values)
+    ..pc<TetrisPlayerInfo>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerInfo', $pb.PbFieldType.PM, subBuilder: TetrisPlayerInfo.create)
     ..hasRequiredFields = false
   ;
 
-  S2C_PlayerExitBroadcast._() : super();
-  factory S2C_PlayerExitBroadcast() => create();
-  factory S2C_PlayerExitBroadcast.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory S2C_PlayerExitBroadcast.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  S2C_PlayerStatusChangeBroadcast._() : super();
+  factory S2C_PlayerStatusChangeBroadcast() => create();
+  factory S2C_PlayerStatusChangeBroadcast.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory S2C_PlayerStatusChangeBroadcast.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  S2C_PlayerExitBroadcast clone() => S2C_PlayerExitBroadcast()..mergeFromMessage(this);
+  S2C_PlayerStatusChangeBroadcast clone() => S2C_PlayerStatusChangeBroadcast()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  S2C_PlayerExitBroadcast copyWith(void Function(S2C_PlayerExitBroadcast) updates) => super.copyWith((message) => updates(message as S2C_PlayerExitBroadcast)); // ignore: deprecated_member_use
+  S2C_PlayerStatusChangeBroadcast copyWith(void Function(S2C_PlayerStatusChangeBroadcast) updates) => super.copyWith((message) => updates(message as S2C_PlayerStatusChangeBroadcast)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static S2C_PlayerExitBroadcast create() => S2C_PlayerExitBroadcast._();
-  S2C_PlayerExitBroadcast createEmptyInstance() => create();
-  static $pb.PbList<S2C_PlayerExitBroadcast> createRepeated() => $pb.PbList<S2C_PlayerExitBroadcast>();
+  static S2C_PlayerStatusChangeBroadcast create() => S2C_PlayerStatusChangeBroadcast._();
+  S2C_PlayerStatusChangeBroadcast createEmptyInstance() => create();
+  static $pb.PbList<S2C_PlayerStatusChangeBroadcast> createRepeated() => $pb.PbList<S2C_PlayerStatusChangeBroadcast>();
   @$core.pragma('dart2js:noInline')
-  static S2C_PlayerExitBroadcast getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2C_PlayerExitBroadcast>(create);
-  static S2C_PlayerExitBroadcast _defaultInstance;
+  static S2C_PlayerStatusChangeBroadcast getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2C_PlayerStatusChangeBroadcast>(create);
+  static S2C_PlayerStatusChangeBroadcast _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get playerIndex => $_getIZ(0);
+  $core.int get seatIndex => $_getIZ(0);
   @$pb.TagNumber(1)
-  set playerIndex($core.int v) { $_setUnsignedInt32(0, v); }
+  set seatIndex($core.int v) { $_setUnsignedInt32(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPlayerIndex() => $_has(0);
+  $core.bool hasSeatIndex() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlayerIndex() => clearField(1);
+  void clearSeatIndex() => clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get userId => $_getI64(1);
@@ -901,50 +727,62 @@ class S2C_PlayerExitBroadcast extends $pb.GeneratedMessage {
   $core.bool hasUserId() => $_has(1);
   @$pb.TagNumber(2)
   void clearUserId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  S2C_PlayerStatusChangeBroadcast_PlayerStatusType get status => $_getN(2);
+  @$pb.TagNumber(3)
+  set status(S2C_PlayerStatusChangeBroadcast_PlayerStatusType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<TetrisPlayerInfo> get playerInfo => $_getList(3);
 }
 
-class S2C_GameStartBroadcast extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2C_GameStartBroadcast', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
+class S2C_GameStatusChangeBroadcast extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2C_GameStatusChangeBroadcast', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
     ..pc<TetrisPlayerInfo>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerInfo', $pb.PbFieldType.PM, subBuilder: TetrisPlayerInfo.create)
-    ..aOM<TetrisRoomInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roomInfo', subBuilder: TetrisRoomInfo.create)
+    ..aOM<TetrisRoomInfo>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roomInfo', subBuilder: TetrisRoomInfo.create)
     ..hasRequiredFields = false
   ;
 
-  S2C_GameStartBroadcast._() : super();
-  factory S2C_GameStartBroadcast() => create();
-  factory S2C_GameStartBroadcast.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory S2C_GameStartBroadcast.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  S2C_GameStatusChangeBroadcast._() : super();
+  factory S2C_GameStatusChangeBroadcast() => create();
+  factory S2C_GameStatusChangeBroadcast.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory S2C_GameStatusChangeBroadcast.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  S2C_GameStartBroadcast clone() => S2C_GameStartBroadcast()..mergeFromMessage(this);
+  S2C_GameStatusChangeBroadcast clone() => S2C_GameStatusChangeBroadcast()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  S2C_GameStartBroadcast copyWith(void Function(S2C_GameStartBroadcast) updates) => super.copyWith((message) => updates(message as S2C_GameStartBroadcast)); // ignore: deprecated_member_use
+  S2C_GameStatusChangeBroadcast copyWith(void Function(S2C_GameStatusChangeBroadcast) updates) => super.copyWith((message) => updates(message as S2C_GameStatusChangeBroadcast)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static S2C_GameStartBroadcast create() => S2C_GameStartBroadcast._();
-  S2C_GameStartBroadcast createEmptyInstance() => create();
-  static $pb.PbList<S2C_GameStartBroadcast> createRepeated() => $pb.PbList<S2C_GameStartBroadcast>();
+  static S2C_GameStatusChangeBroadcast create() => S2C_GameStatusChangeBroadcast._();
+  S2C_GameStatusChangeBroadcast createEmptyInstance() => create();
+  static $pb.PbList<S2C_GameStatusChangeBroadcast> createRepeated() => $pb.PbList<S2C_GameStatusChangeBroadcast>();
   @$core.pragma('dart2js:noInline')
-  static S2C_GameStartBroadcast getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2C_GameStartBroadcast>(create);
-  static S2C_GameStartBroadcast _defaultInstance;
+  static S2C_GameStatusChangeBroadcast getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2C_GameStatusChangeBroadcast>(create);
+  static S2C_GameStatusChangeBroadcast _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<TetrisPlayerInfo> get playerInfo => $_getList(0);
 
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
   TetrisRoomInfo get roomInfo => $_getN(1);
-  @$pb.TagNumber(3)
-  set roomInfo(TetrisRoomInfo v) { setField(3, v); }
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
+  set roomInfo(TetrisRoomInfo v) { setField(2, v); }
+  @$pb.TagNumber(2)
   $core.bool hasRoomInfo() => $_has(1);
-  @$pb.TagNumber(3)
-  void clearRoomInfo() => clearField(3);
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
+  void clearRoomInfo() => clearField(2);
+  @$pb.TagNumber(2)
   TetrisRoomInfo ensureRoomInfo() => $_ensure(1);
 }
 
@@ -1070,45 +908,6 @@ class S2C_GridBroadcast extends $pb.GeneratedMessage {
   void clearHeight() => clearField(4);
 }
 
-class S2C_GameOverBroadcast extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'S2C_GameOverBroadcast', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'frame')
-    ..hasRequiredFields = false
-  ;
-
-  S2C_GameOverBroadcast._() : super();
-  factory S2C_GameOverBroadcast() => create();
-  factory S2C_GameOverBroadcast.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory S2C_GameOverBroadcast.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  S2C_GameOverBroadcast clone() => S2C_GameOverBroadcast()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  S2C_GameOverBroadcast copyWith(void Function(S2C_GameOverBroadcast) updates) => super.copyWith((message) => updates(message as S2C_GameOverBroadcast)); // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static S2C_GameOverBroadcast create() => S2C_GameOverBroadcast._();
-  S2C_GameOverBroadcast createEmptyInstance() => create();
-  static $pb.PbList<S2C_GameOverBroadcast> createRepeated() => $pb.PbList<S2C_GameOverBroadcast>();
-  @$core.pragma('dart2js:noInline')
-  static S2C_GameOverBroadcast getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<S2C_GameOverBroadcast>(create);
-  static S2C_GameOverBroadcast _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get frame => $_getI64(0);
-  @$pb.TagNumber(1)
-  set frame($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasFrame() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearFrame() => clearField(1);
-}
-
 class TetrisPlayerInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TetrisPlayerInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
     ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
@@ -1119,6 +918,7 @@ class TetrisPlayerInfo extends $pb.GeneratedMessage {
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inGame')
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'online')
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'auto')
+    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'score', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
@@ -1216,17 +1016,22 @@ class TetrisPlayerInfo extends $pb.GeneratedMessage {
   $core.bool hasAuto() => $_has(7);
   @$pb.TagNumber(8)
   void clearAuto() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get score => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set score($core.int v) { $_setUnsignedInt32(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasScore() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearScore() => clearField(9);
 }
 
 class TetrisRoomInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TetrisRoomInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tetris'), createEmptyInstance: create)
     ..e<TetrisGameType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roomType', $pb.PbFieldType.OE, defaultOrMaker: TetrisGameType.CLASSIC, valueOf: TetrisGameType.valueOf, enumValues: TetrisGameType.values)
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'playerNum')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gear')
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'useProps')
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'private')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
-    ..aInt64(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner')
+    ..e<TetrisGameStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TetrisGameStatus.AWAIT, valueOf: TetrisGameStatus.valueOf, enumValues: TetrisGameStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -1272,49 +1077,13 @@ class TetrisRoomInfo extends $pb.GeneratedMessage {
   void clearPlayerNum() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get gear => $_getI64(2);
+  TetrisGameStatus get status => $_getN(2);
   @$pb.TagNumber(3)
-  set gear($fixnum.Int64 v) { $_setInt64(2, v); }
+  set status(TetrisGameStatus v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasGear() => $_has(2);
+  $core.bool hasStatus() => $_has(2);
   @$pb.TagNumber(3)
-  void clearGear() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.bool get useProps => $_getBF(3);
-  @$pb.TagNumber(4)
-  set useProps($core.bool v) { $_setBool(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasUseProps() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearUseProps() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.bool get private => $_getBF(4);
-  @$pb.TagNumber(5)
-  set private($core.bool v) { $_setBool(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPrivate() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPrivate() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get version => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set version($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasVersion() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearVersion() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $fixnum.Int64 get owner => $_getI64(6);
-  @$pb.TagNumber(7)
-  set owner($fixnum.Int64 v) { $_setInt64(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasOwner() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearOwner() => clearField(7);
+  void clearStatus() => clearField(3);
 }
 
 class Block extends $pb.GeneratedMessage {
